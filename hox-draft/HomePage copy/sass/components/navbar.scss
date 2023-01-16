@@ -1,0 +1,14 @@
+.nav {
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+  z-index: 1;
+
+  &-link {
+    color: white;
+    font-family: "cocogoose";
+  }
+  &-link:hover {
+    color: $color-primary;
+  }
+}

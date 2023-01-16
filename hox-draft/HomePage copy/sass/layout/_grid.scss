@@ -1,0 +1,52 @@
+.row {
+  max-width: $grid-width; // if there is enough space it will be 114, otherwise take all the space
+  //background-color: #eee;
+  margin: 0 auto; //set to middle, left and right will be the same by the keyword auto
+
+  &:not(:last-child) {
+    // select everthing except the last-child
+    margin-bottom: $gutter-vertical;
+    // we did every row has a butttom margin, exceoet the last one
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    // select all the elements starts with col-, $ means ends, * means contains
+    // background-color: orange;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+  .col-1-of-2 {
+    width: calc((100% - 2 *#{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
+    );
+  }
+}

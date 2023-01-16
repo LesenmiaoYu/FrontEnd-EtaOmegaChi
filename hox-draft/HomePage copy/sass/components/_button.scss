@@ -1,0 +1,72 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* get off the underline */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* if you want the padding and height of width workds out */
+    border-radius: 10rem;
+    transition: all 0.2s;
+    /* all the properties are enabled to be animated, always put the transition properties on the intial states */
+    position: relative;
+    /* in this way the btn:after will not reference the header but the btn */
+    top: 5rem;
+    left: 39%;
+    //change for the <button> element
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* negative means move up, since it moves from up to down  */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* 0 for x, 10 for y 20px for blur or shadow */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      transform: scale(1.5);
+      /* increase the size */
+      opacity: 0;
+    }
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    /* the intial state for all after */
+    content: "";
+    /* always necessary */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* pesudo is treated as the child of the button or the object */
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* the layer position */
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+
+    /* the elments will be used brfore the animation starts */
+  }
+}

@@ -1,0 +1,27 @@
+.header {
+  //height: 95vh; /*every element should be 95 percent of the viewport height */
+
+  // url(../img/hero.jpg); /* first color become to the seoncd color from left to right, and its coverd on the image */
+
+  background-size: cover; /* what ever the web size changes the image size always fit in the window*/
+  background-position: top; /*it ensures the top of the image always stay in the top of the container*/
+  position: relative; /* add relative here to let the logo-box work*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* here the percentage is about the object */
+  /* white triangle on the bottom, find four corners where include the visible image */
+  &__Logo-box {
+    z-index: 1;
+    position: absolute;
+    top: 0.5rem; /* here means 40px aways from the parent element, in this case the header*/
+    left: 0.7rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+}

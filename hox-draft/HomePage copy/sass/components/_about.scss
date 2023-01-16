@@ -1,0 +1,32 @@
+.about {
+  margin-top: 32rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  height: 70%;
+  top: auto;
+  background-color: $color-primary-dark;
+  &__heading {
+    position: relative;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &__p-1 {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+  }
+  &__p-2 {
+    font-size: 1.5rem;
+    position: relative;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+  }
+}

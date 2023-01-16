@@ -1,0 +1,15 @@
+@mixin clearfix {
+  //append a presudo element, after the eleent wich will then clear these floats
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
